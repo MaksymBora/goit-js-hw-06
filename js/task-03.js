@@ -14,40 +14,65 @@ const images = [
   },
 ];
 
-// const itemEl = document.createElement('li');
-// itemEl.classList.add('list');
+// const addImg = images.map(element => {
+//   const itemEl = document.createElement('li');
+//   itemEl.classList.add('gallery-item');
 
-// console.log(itemEl);
+//   const imgEl = document.createElement('img');
+//   imgEl.classList.add('gallery-img');
+//   imgEl.src = element.url;
+//   imgEl.alt = element.alt;
+//   imgEl.width = 480;
+//   imgEl.height = 240;
 
-// const imgEl = document.createElement('img');
-// imgEl.src = images[0].url;
-// imgEl.alt = images[0].alt;
-// imgEl.width = 640;
+//   itemEl.append(imgEl);
 
-// console.log(imgEl);
+//   const listEl = document.querySelector('.gallery');
 
-// itemEl.append(imgEl);
-// console.log(itemEl);
+//   listEl.append(itemEl);
+// });
 
 // const listEl = document.querySelector('.gallery');
-// console.log(listEl);
 
-// listEl.append(itemEl);
+// const addImg = images => {
+//   return images.map(image => {
+//     const itemEl = document.createElement('li');
+//     itemEl.classList.add('gallery-item');
 
-const addImg = images.map(element => {
-  const itemEl = document.createElement('li');
-  itemEl.classList.add('gallery-item');
+//     const imgEl = document.createElement('img');
+//     imgEl.classList.add('gallery-img');
+//     imgEl.src = image.url;
+//     imgEl.alt = image.alt;
+//     imgEl.width = 480;
+//     imgEl.height = 240;
 
-  const imgEl = document.createElement('img');
-  imgEl.classList.add('gallery-img');
-  imgEl.src = element.url;
-  imgEl.alt = element.alt;
-  imgEl.width = 480;
-  imgEl.height = 240;
+//     itemEl.append(imgEl);
 
-  itemEl.append(imgEl);
+//     return itemEl;
+//   });
+// };
 
-  const listEl = document.querySelector('.gallery');
+// const elements = addImg(images);
 
-  listEl.append(itemEl);
+// listEl.append(...elements);
+
+const listEl = document.querySelector('.gallery');
+
+const addImg = images => {
+  return images.map(image => {
+    const itemEl = document.createElement('li');
+    itemEl.classList.add('gallery-item');
+
+    const imgEl = `<img class="gallery-img" src=${image.url} alt="${image.alt}" width="480" height="240">`;
+
+    itemEl.insertAdjacentHTML('beforeend', imgEl);
+
+    return itemEl;
+  });
+};
+
+const elements = addImg(images);
+
+elements.forEach(element => {
+  listEl.insertAdjacentElement('beforeend', element);
 });
