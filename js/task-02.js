@@ -3,11 +3,9 @@ const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Con
 const listEl = document.getElementById('ingredients');
 
 const elements = ingredients.map(element => {
-  const createEl = document.createElement('li');
-  createEl.classList.add('item');
-  createEl.textContent = element;
-  listEl.append(createEl);
-  return createEl;
+  const createItemEl = document.createElement('li');
+  createItemEl.classList.add('item');
+  createItemEl.textContent = element;
+  listEl.append(createItemEl);
+  return createItemEl;
 });
-
-console.log(listEl);
