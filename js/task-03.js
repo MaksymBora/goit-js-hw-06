@@ -56,6 +56,8 @@ const images = [
 
 // listEl.append(...elements);
 
+/* ======= with insertAdjacentHTML ================*/
+
 const listEl = document.querySelector('.gallery');
 
 const addImg = images => {
