@@ -1,5 +1,3 @@
-// style = 'font-size: 20px';
-
 const inputControl = document.querySelector('#font-size-control');
 const outputText = document.querySelector('#text');
 
