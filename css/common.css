@@ -35,3 +35,10 @@ button {
 .gallery-img {
   max-width: 100%;
 }
+
+#boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
