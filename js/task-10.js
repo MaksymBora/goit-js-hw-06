@@ -37,6 +37,7 @@ function createBoxes() {
 
     refs.box.append(createEl);
   }
+  refs.input.value = '';
 }
 
 function destroyBoxes() {
@@ -45,4 +46,5 @@ function destroyBoxes() {
   findBoxes.forEach(box => {
     box.remove();
   });
+  refs.input.value = '';
 }
